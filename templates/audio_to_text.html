@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="/static/header_file.css">
+<link rel="stylesheet" type="text/css" href="/static/footer_file.css">
+<link rel="stylesheet" type="text/css" href="/static/main.css">
+<link rel="stylesheet" type="text/css" href="/static/audio_to_text.css">
+<script src="/static/recorder.js"></script>
+<script src="/static/audiodisplay.js"></script>
+<script src="/static/main.js"></script>
+<script src="/static/recorderWorker.js"></script>
+
+</head>
+    <body style="background-color:rgb(127, 195, 255);">
+    {% include "header.html" %}
+    
+    <div id="loader">
+        <p class="glow">SPEECH to TEXT</p>
+    </div>
+
+    <div id="loader">
+        <div class="row " style="position:relative;">
+            <div class="column1">
+                <h2>Record Audio</h2>
+                    <p>
+                        <button id="start" class="btn btn-success" onclick="startRecording()" disabled>Start</button>
+                        <button id="stop" class="btn btn-danger" onclick="stopRecording()" disabled>Stop</button>
+                    </p>
+            </div>
+            <div class="column2" >
+                <h2>Audio Prediction</h2>
+                <p class="glow" id="output" style="font-size: 20px;"></p>
+                
+                
+            </div>
+        </div>
+    </div>
+    {% extends "footer.html" %}
+    {% block footer%}fixed{% endblock %}
+    </body>
+    
+</html>
